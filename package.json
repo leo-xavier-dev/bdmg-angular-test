@@ -6,12 +6,12 @@
     "start": "node server.js",
     "postinstall": "ng build --aot --prod",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
     "test": "ng test"
   },
   "engines": {
-    "node": "16.18.0",
-    "npm": "8.19.2"
+    "node": "12.x"
   },
   "private": true,
   "dependencies": {
