@@ -1,13 +1,14 @@
 {
   "name": "bdmg-angular-test",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.18.0",
+    "npm": "8.19.2"
+  },
   "scripts": {
     "start": "node server.js",
     "build": "ng build --prod"
-  },
-  "engines": {
-    "node": "16.x"
-  },
+  },  
   "env": {
     "NODE_ENV": "production"
   },
