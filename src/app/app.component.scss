@@ -1,0 +1,13 @@
+::ng-deep {
+  .mat-grid-tile-content {
+    display: inline !important;
+  }
+
+  .mat-form-field {
+    width: 100% !important;
+  }
+
+  .mat-grid-tile-content > div {
+    padding: 0 10px;
+  }
+}

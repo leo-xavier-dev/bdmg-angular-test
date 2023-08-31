@@ -1,2 +1,4 @@
-# bdmg-angular-test
- 
+# BdmgAngularTest
+
+npm i
+ng s 

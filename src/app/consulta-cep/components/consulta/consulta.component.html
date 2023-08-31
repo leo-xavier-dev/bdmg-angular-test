@@ -1,0 +1,134 @@
+<form [formGroup]="cepForm">
+  <div class="container">
+
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event, 6, 3)" rowHeight="60px">
+      <mat-grid-tile [colspan]="colspan">
+        <div>
+          <mat-form-field>
+            <mat-label>CEP</mat-label>
+            <input matInput placeholder="Informe o CEP para consulta" formControlName="cep" mask="00000-000">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <button mat-raised-button color="primary" (click)="onSearch()">Consultar</button>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  </div>
+
+
+  <div class="container">
+    <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event, 6, 3)" rowHeight="60px">
+      <mat-grid-tile [colspan]="colspan">
+        <div>
+          <mat-form-field>
+            <mat-label>Endereço</mat-label>
+            <input matInput formControlName="logradouro">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>Bairro</mat-label>
+            <input matInput formControlName="bairro">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>Cidade</mat-label>
+            <input matInput formControlName="localidade">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>UF</mat-label>
+            <input matInput formControlName="uf">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>Complemento</mat-label>
+            <input matInput formControlName="complemento" mask="0.000">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>IBGE</mat-label>
+            <input matInput formControlName="ibge">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>GIA</mat-label>
+            <input matInput formControlName="gia">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>DDD</mat-label>
+            <input matInput formControlName="ddd">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <mat-form-field>
+            <mat-label>SIAFI</mat-label>
+            <input matInput formControlName="siafi">
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </div>
+
+  <div class="container">
+    <button mat-raised-button color="primary" [disabled]="this.cepForm.invalid" (click)="onSubmit()">Salvar</button>
+  </div>
+
+</form>
+
+<div class="container">
+  <app-lista 
+    [cepData]="cepData"
+    (edit)="onEdit($event)"
+    (remove)="onDelete($event)"
+  ></app-lista>
+</div>
+<!-- <table>
+  <thead>
+    <tr>
+      <th>CEP</th>
+      <th>Logradouro</th>
+      <th>Complemento</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of cepData">
+      <td>{{ data.cep }}</td>
+      <td>{{ data.logradouro }}</td>
+      <td>{{ data.complemento }}</td>
+      <td>
+        <button (click)="onEdit(data)">Editar</button>
+        <button (click)="onDelete(data.cep)">Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
