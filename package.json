@@ -6,11 +6,9 @@
     "npm": "8.19.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "ng build --prod"
-  },  
-  "env": {
-    "NODE_ENV": "production"
+    "start" : "node server.js",
+    "build": "ng build --prod",
+    "heroku-postbuild": "ng build — prod"
   },
   "dependencies": {
     "@angular/animations": "~13.1.0",
