@@ -66,7 +66,7 @@
         <div>
           <mat-form-field>
             <mat-label>IBGE</mat-label>
-            <input matInput formControlName="ibge">
+            <input matInput formControlName="ibge" [readonly]="true">
           </mat-form-field>
         </div>
       </mat-grid-tile>
@@ -74,7 +74,7 @@
         <div>
           <mat-form-field>
             <mat-label>GIA</mat-label>
-            <input matInput formControlName="gia">
+            <input matInput formControlName="gia" [readonly]="true">
           </mat-form-field>
         </div>
       </mat-grid-tile>
@@ -82,7 +82,7 @@
         <div>
           <mat-form-field>
             <mat-label>DDD</mat-label>
-            <input matInput formControlName="ddd">
+            <input matInput formControlName="ddd" [readonly]="true">
           </mat-form-field>
         </div>
       </mat-grid-tile>
@@ -90,7 +90,7 @@
         <div>
           <mat-form-field>
             <mat-label>SIAFI</mat-label>
-            <input matInput formControlName="siafi">
+            <input matInput formControlName="siafi" [readonly]="true">
           </mat-form-field>
         </div>
       </mat-grid-tile>
@@ -111,24 +111,3 @@
     (remove)="onDelete($event)"
   ></app-lista>
 </div>
-<!-- <table>
-  <thead>
-    <tr>
-      <th>CEP</th>
-      <th>Logradouro</th>
-      <th>Complemento</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let data of cepData">
-      <td>{{ data.cep }}</td>
-      <td>{{ data.logradouro }}</td>
-      <td>{{ data.complemento }}</td>
-      <td>
-        <button (click)="onEdit(data)">Editar</button>
-        <button (click)="onDelete(data.cep)">Excluir</button>
-      </td>
-    </tr>
-  </tbody>
-</table> -->
