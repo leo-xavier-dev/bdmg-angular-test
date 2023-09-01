@@ -20,7 +20,7 @@ export class CepService {
 
   getAllCepInfoFromLocalStorage(): Observable<CepInfo[]> {
     const keys = Object.keys(localStorage);
-    const data = keys.map(key => JSON.parse(localStorage.getItem(key)!));
+    const data = keys.filter(key => /^\d{5}-\d{3}$/.test(key)).map(key => JSON.parse(localStorage.getItem(key)!));
     return of(data);
   }
 
