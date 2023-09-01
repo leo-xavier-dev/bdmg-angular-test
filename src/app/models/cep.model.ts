@@ -10,3 +10,7 @@ export interface CepInfo {
   ddd: string;
   siafi: string;
 }
+
+export interface Erro {
+  erro: boolean;
+}

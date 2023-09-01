@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CepInfo } from 'src/app/models/cep.model';
+import { CepInfo, Erro } from 'src/app/models/cep.model';
 import { CepService } from '../../services/cep.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -60,7 +60,11 @@ export class ConsultaComponent implements OnInit {
   onSearch(): void {
     const cep = this.cepForm.get('cep')!.value;
     this.cepService.getCepInfo(cep).subscribe({
-      next: (data: CepInfo) => {
+      next: (data: CepInfo | any) => {
+        if (data.erro) {
+          this.openSnackBar('Cep inválido ou não encontrado', 'Ok');
+          return;
+        }
         this.cepForm.patchValue(data);
       },
       error: () => {

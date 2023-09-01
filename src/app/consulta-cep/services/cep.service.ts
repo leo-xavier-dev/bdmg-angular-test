@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { CepInfo } from 'src/app/models/cep.model';
+import { CepInfo, Erro } from 'src/app/models/cep.model';
 
 @Injectable({
   providedIn: 'root',
